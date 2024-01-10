@@ -7,7 +7,7 @@ import io.restassured.specification.RequestSpecification;
 public class utils {
 
 	RequestSpecification requestSpecification;
-	String bearer_token = "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";
+	String bearer_token = "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";
 	Response response;
 	String baseURI = "https://api.github.com";
 	RestLogger restLogger = new RestLogger();
