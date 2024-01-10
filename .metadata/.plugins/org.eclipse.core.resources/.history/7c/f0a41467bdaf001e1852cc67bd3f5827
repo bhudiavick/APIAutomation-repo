@@ -7,8 +7,8 @@ Scenario Outline: 	Verify Create Repo API
 	Given   Create Repo Payload name "<name>" and description "<description>"
 	When 	User calls Create API "/user/repos" POST API Call
 	Then 	API Call is Successful with 201 status code
-	And 	Verify Repository "name" is "<name>"
-	And 	Verify Repository "description" is "<description>"
+	And 	Verify Repository "name" is "API-TEST-REPO"
+	And 	Verify Repository "description" is "API rep created via BDD Test"
 	And 	Ending TestCase 
 
 Examples:
