@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="APIFramework" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="cucumber.Options.TestRunner" time="0.001" displayname="TestRunner" uniqueid="[engine:junit-vintage]/[runner:cucumber.Options.TestRunner]">
+    <testcase name="cucumber.Options.TestRunner" classname="cucumber.Options.TestRunner" time="0.001" displayname="initializationError" uniqueid="[engine:junit-vintage]/[runner:cucumber.Options.TestRunner]/[test:initializationError(cucumber.Options.TestRunner)]">
+      <error>io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///C:/Users/vick/eclipse-workspace/APIFramework/src/test/java/feature/createRepo.feature
+(10:2): expected: #EOF, #TableRow, #DocStringSeparator, #StepLine, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got 'And		Ending TestCase'
+(17:2): expected: #EOF, #TableRow, #DocStringSeparator, #StepLine, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got 'And		Ending TestCase'&#13;
+	at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:56)&#13;
+	at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:46)&#13;
+	at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)&#13;
+	at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)&#13;
+	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:75)&#13;
+	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:60)&#13;
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2811)&#13;
+	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:53)&#13;
+	at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:31)&#13;
+	at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)&#13;
+	at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)&#13;
+	at io.cucumber.core.runtime.FeaturePathFeatureSupplier.loadFeatures(FeaturePathFeatureSupplier.java:62)&#13;
+	at io.cucumber.core.runtime.FeaturePathFeatureSupplier.get(FeaturePathFeatureSupplier.java:45)&#13;
+	at io.cucumber.junit.Cucumber.&lt;init&gt;(Cucumber.java:156)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)&#13;
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)&#13;
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1602)&#13;
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)&#13;
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)&#13;
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)&#13;
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)&#13;
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)&#13;
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)&#13;
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

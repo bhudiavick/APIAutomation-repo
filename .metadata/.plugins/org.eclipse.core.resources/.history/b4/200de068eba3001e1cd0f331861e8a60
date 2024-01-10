@@ -1,0 +1,45 @@
+package POJO;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JSONArraySerialization {
+	
+	
+	
+	String completeJson;
+	ArrayList<SamplePOJO> allEmployeeSamplePOJOs = new ArrayList<SamplePOJO>();
+	@Test
+	public void createJSONArrayFromPOJO() throws JsonProcessingException {
+		
+		
+		createEmployee("Vick", "Bhudia", "male", 38, 51000, true);
+		createEmployee("Reeva", "Bhudia", "female", 8, 0, false);
+		createEmployee("Leah", "Bhudia", "female", 5, 0, false);
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+		completeJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(allEmployeeSamplePOJOs);
+		System.out.println(completeJson);
+		
+	}
+	//called by createEmployee method which will store a 
+	public void addToArray(String data) throws JsonMappingException, JsonProcessingException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		allEmployeeSamplePOJOs.add(objectMapper.readValue(data, SamplePOJO.class));
+		
+	}
+	//calls external method, which takes the arguments, and then builds out the POJO
+	//Finally it returns the String representation of the JSON for the same POJO however, we will not use that in this example
+	//IN BELOW case we are simply adding the POJO class into the array which is expecting an SAMPLEPojo object
+	public void createEmployee(String firstName, String lastName, String gender, int age, double salary, boolean married) throws JsonProcessingException {
+		DataSerializeAndDeserialize dataSerializeAndDeserialize = new DataSerializeAndDeserialize();
+		addToArray(dataSerializeAndDeserialize.createEmployee(firstName, lastName, gender,age,salary, married));
+		}
+	
+}

@@ -1,0 +1,10 @@
+import PojoPayloads.CreateRepoPOJO;
+
+public class TestDataBuilder {
+	CreateRepoPOJO req_payload = new CreateRepoPOJO();
+	public CreateRepoPOJO createRepoPayload() {
+		req_payload.setName("API-TEST-REPO");
+	    req_payload.setDescription("API rep created via BDD Test");
+	    return req_payload;
+	}
+}

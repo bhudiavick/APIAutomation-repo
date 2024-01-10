@@ -1,0 +1,61 @@
+package basic.testcase;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.restassured.response.Response;
+import pojoclasses.CreateRepoPOJO;
+import restapibase.BaseClass;
+import utility.Authn;
+import utility.CommonUtilFunctions;
+import utility.createURL;
+import utility.payloadGenerator;
+
+public class createRepoTest {
+	Response response;
+	String endPoint = createURL.getBaseURI("/user/repos");
+	String bearer_token = Authn.getBearerToken();
+	ObjectMapper objectMapper;
+	@Test
+	public void createRepositoryTestCase() throws IOException {
+		
+		String req_Payload = payloadGenerator.generateStringPayload("createRepo.json");
+		response = BaseClass.postRequest(endPoint, req_Payload, bearer_token);
+		String responseString = response.getBody().asPrettyString();
+		System.out.println("******* Response ********");
+		System.out.println(responseString);
+		Assert.assertEquals(getKeyValue(responseString, "name"),getKeyValue(req_Payload, "name"));
+		Assert.assertEquals(getKeyValue(responseString, "description"),getKeyValue(req_Payload, "description"));
+		System.out.println("Name expected is : " + getKeyValue(req_Payload, "name") );
+		System.out.println("Name expected is : " + getKeyValue(req_Payload, "name"));
+		System.out.println("Description in actual is : " + getKeyValue(responseString, "description") );
+		System.out.println("Description actual is : " + getKeyValue(responseString, "description"));
+	}
+	@Test
+	public void createRepoTestCaseUsingPojo() throws JsonProcessingException {
+		
+		pojoclasses.CreateRepoPOJO vick = new CreateRepoPOJO("APIAutomation-repo3", "Automation using Rest Assured!");
+		objectMapper = new ObjectMapper();
+		String request = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(vick);
+		response = BaseClass.postRequest(endPoint, request, bearer_token);
+		String responseString = response.getBody().asPrettyString();
+		System.out.println("******* Response ********");
+		System.out.println(responseString);
+		Assert.assertEquals(getKeyValue(responseString, "name"),vick.getName());
+		Assert.assertEquals(getKeyValue(responseString, "description"),vick.getDescription());
+		System.out.println("Name expected is : " + vick.getName() );
+		System.out.println("Name expected is : " + getKeyValue(responseString, "name"));
+		System.out.println("Description in actual is : " + vick.getDescription());
+		System.out.println("Description actual is : " + getKeyValue(responseString, "description") );
+		
+	}
+	
+	public String getKeyValue(String payload,String key) {
+		return CommonUtilFunctions.getResponseKeyValue(payload,key);
+	}
+}

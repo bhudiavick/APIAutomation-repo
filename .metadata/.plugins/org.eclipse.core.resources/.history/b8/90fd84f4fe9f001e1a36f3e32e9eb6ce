@@ -1,0 +1,32 @@
+package basic.rest.postcall;
+import  io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+
+import static  io.restassured.RestAssured.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+
+import org.testng.annotations.Test;
+public class postcallautomation {
+
+	@Test
+	public void createBoard(){
+		RestAssured.baseURI = "https://api.trello.com";
+		String board_name = "Automation test board " + (int)Math.random()*100;
+		System.out.println("My board name : " + board_name);
+		System.out.println(Math.random());
+		System.out.println(Math.random() * 100);
+		given().
+			queryParam("key", "956ce08a64264f72930ada6c9f4e10d5").
+			queryParam("token", "ATTAc6c357ddb0f28aa275c849830c4e502a7a27e70949a237e20cdb11261aea60a03BA749A5").
+			queryParam("name", board_name).
+			header("Content-Type","application/json").
+		when().
+			post("/1/boards").
+		then().
+			assertThat().statusCode(200).and().
+			contentType(ContentType.JSON).and().
+			body("name",equalTo(board_name));
+		
+		System.out.println("get call executed successfully");
+	}
+}

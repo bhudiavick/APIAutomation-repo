@@ -1,0 +1,5 @@
+package resource.commonUtils;
+
+public class RestLogger {
+
+}

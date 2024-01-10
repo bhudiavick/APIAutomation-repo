@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestNG Sample" verbose="1">
+  <test thread-count="1" name="Sample" preserve-order="true">
+	  <classes>
+		  <class name ="executionorder.SampleTestngUsage"/>
+		  <class name ="executionorder.AnnotationTest"/>
+	  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

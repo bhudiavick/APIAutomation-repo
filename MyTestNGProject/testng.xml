@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Facebook Login">
+  <test thread-count="1" name="Facebook Positive test case">
+	  <classes>
+		  <class name ="FacebookLogin"/>
+		  <class name ="FacebookProfile"/>
+	  </classes>
+  </test> <!-- Test -->
+    <test thread-count="1" name="Facebook Profile">
+	  <classes>
+		  <class name ="FacebookProfile"/>
+	  </classes>
+  </test> <!-- Test -->
+  <!--<test thread-count="1" name="Sample testsuite package">
+	  <packages>
+		  
+		  <package name="com.testing.training">
+			  
+		  </package>
+	  </packages>
+  </test>
+  -->
+</suite> <!-- Suite -->

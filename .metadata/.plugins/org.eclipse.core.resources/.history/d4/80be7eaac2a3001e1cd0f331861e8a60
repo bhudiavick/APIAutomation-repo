@@ -1,0 +1,20 @@
+package POJO;
+
+
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class DataSerializeAndDeserialize {
+	@Test
+	public void createDataFromPOJO() throws JsonProcessingException {
+		SamplePOJO employeePojo = new SamplePOJO("Vick", "Bhudia", "male",38,51000, true);
+		ObjectMapper objectMapper = new ObjectMapper();
+		String employeeJSON = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(employeePojo);
+		System.out.println(employeeJSON);
+		
+		
+		
+	}
+}

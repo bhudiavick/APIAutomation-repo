@@ -1,0 +1,110 @@
+2024-01-05 07:22:41,224 INFO  - ****************************************************************************************
+2024-01-05 07:22:41,224 INFO  - ****************************************************************************************
+2024-01-05 07:22:41,224 INFO  - $$$$$$$$$$$$$$$$$$$$$            createRepoTestCaseUsingPojo         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-05 07:22:41,225 INFO  - ****************************************************************************************
+2024-01-05 07:22:41,225 INFO  - ****************************************************************************************
+2024-01-05 07:22:41,225 INFO  - Step 1 - Generating payload String
+2024-01-05 07:22:41,492 INFO  - Step 2 - Executing Create Repo call
+2024-01-05 07:22:41,495 INFO  - Request URI is - https://api.github.com/user/repos
+2024-01-05 07:22:41,495 INFO  - Request payload is - {
+  "name" : "APIAutomation-repo3",
+  "description" : "Automation using Rest Assured!"
+}
+2024-01-05 07:22:44,711 INFO  - Response is - {"id":739278528,"node_id":"R_kgDOLBB-wA","name":"APIAutomation-repo3","full_name":"bhudiavick/APIAutomation-repo3","private":false,"owner":{"login":"bhudiavick","id":154526972,"node_id":"U_kgDOCTXk_A","avatar_url":"https://avatars.githubusercontent.com/u/154526972?v=4","gravatar_id":"","url":"https://api.github.com/users/bhudiavick","html_url":"https://github.com/bhudiavick","followers_url":"https://api.github.com/users/bhudiavick/followers","following_url":"https://api.github.com/users/bhudiavick/following{/other_user}","gists_url":"https://api.github.com/users/bhudiavick/gists{/gist_id}","starred_url":"https://api.github.com/users/bhudiavick/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/bhudiavick/subscriptions","organizations_url":"https://api.github.com/users/bhudiavick/orgs","repos_url":"https://api.github.com/users/bhudiavick/repos","events_url":"https://api.github.com/users/bhudiavick/events{/privacy}","received_events_url":"https://api.github.com/users/bhudiavick/received_events","type":"User","site_admin":false},"html_url":"https://github.com/bhudiavick/APIAutomation-repo3","description":"Automation using Rest Assured!","fork":false,"url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3","forks_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/forks","keys_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/keys{/key_id}","collaborators_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/teams","hooks_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/hooks","issue_events_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/issues/events{/number}","events_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/events","assignees_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/assignees{/user}","branches_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/branches{/branch}","tags_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/tags","blobs_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/git/refs{/sha}","trees_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/git/trees{/sha}","statuses_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/statuses/{sha}","languages_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/languages","stargazers_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/stargazers","contributors_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/contributors","subscribers_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/subscribers","subscription_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/subscription","commits_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/commits{/sha}","git_commits_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/git/commits{/sha}","comments_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/comments{/number}","issue_comment_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/issues/comments{/number}","contents_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/contents/{+path}","compare_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/compare/{base}...{head}","merges_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/merges","archive_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/downloads","issues_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/issues{/number}","pulls_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/pulls{/number}","milestones_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/milestones{/number}","notifications_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/labels{/name}","releases_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/releases{/id}","deployments_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo3/deployments","created_at":"2024-01-05T07:22:41Z","updated_at":"2024-01-05T07:22:41Z","pushed_at":"2024-01-05T07:22:41Z","git_url":"git://github.com/bhudiavick/APIAutomation-repo3.git","ssh_url":"git@github.com:bhudiavick/APIAutomation-repo3.git","clone_url":"https://github.com/bhudiavick/APIAutomation-repo3.git","svn_url":"https://github.com/bhudiavick/APIAutomation-repo3","homepage":null,"size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":0,"watchers":0,"default_branch":"main","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"squash_merge_commit_message":"COMMIT_MESSAGES","squash_merge_commit_title":"COMMIT_OR_PR_TITLE","merge_commit_message":"PR_TITLE","merge_commit_title":"MERGE_MESSAGE","network_count":0,"subscribers_count":0}
+2024-01-05 07:22:44,712 INFO  - Step 3 - Validating repository name
+2024-01-05 07:22:45,457 INFO  - Assertion for name done.
+2024-01-05 07:22:45,457 INFO  - Step 4 - Validating repository description
+2024-01-05 07:22:45,492 INFO  - Assertion for description done.
+2024-01-05 07:22:45,495 INFO  - Response status message is - HTTP/1.1 201 Created
+2024-01-05 07:22:45,495 INFO  - HTTP/1.1 201 Created
+2024-01-05 07:22:45,496 INFO  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:45,496 INFO  - XXXXXXXXXXXXXXXXXXXXXXX***********************************************XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:45,496 INFO  - XXXXXXXXXXXXXXXXXXXXXXX***********************************************XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:45,496 INFO  - X
+2024-01-05 07:22:45,496 INFO  - X
+2024-01-05 07:22:45,496 INFO  - X
+2024-01-05 07:22:45,496 INFO  - X
+2024-01-05 07:22:45,496 INFO  - X
+2024-01-05 07:22:45,507 INFO  - ****************************************************************************************
+2024-01-05 07:22:45,507 INFO  - ****************************************************************************************
+2024-01-05 07:22:45,507 INFO  - $$$$$$$$$$$$$$$$$$$$$            createRepositoryTestCase         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-05 07:22:45,507 INFO  - ****************************************************************************************
+2024-01-05 07:22:45,507 INFO  - ****************************************************************************************
+2024-01-05 07:22:45,507 INFO  - Step 1 - Generating payload String
+2024-01-05 07:22:45,509 INFO  - Step 2 - Executing Create Repo call
+2024-01-05 07:22:45,511 INFO  - Request URI is - https://api.github.com/user/repos
+2024-01-05 07:22:45,512 INFO  - Request payload is - {
+	"name": "APIAutomation-repo2",
+	"description": "Automation using Rest Assured!"
+}
+2024-01-05 07:22:46,440 INFO  - Response is - {"id":739278539,"node_id":"R_kgDOLBB-yw","name":"APIAutomation-repo2","full_name":"bhudiavick/APIAutomation-repo2","private":false,"owner":{"login":"bhudiavick","id":154526972,"node_id":"U_kgDOCTXk_A","avatar_url":"https://avatars.githubusercontent.com/u/154526972?v=4","gravatar_id":"","url":"https://api.github.com/users/bhudiavick","html_url":"https://github.com/bhudiavick","followers_url":"https://api.github.com/users/bhudiavick/followers","following_url":"https://api.github.com/users/bhudiavick/following{/other_user}","gists_url":"https://api.github.com/users/bhudiavick/gists{/gist_id}","starred_url":"https://api.github.com/users/bhudiavick/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/bhudiavick/subscriptions","organizations_url":"https://api.github.com/users/bhudiavick/orgs","repos_url":"https://api.github.com/users/bhudiavick/repos","events_url":"https://api.github.com/users/bhudiavick/events{/privacy}","received_events_url":"https://api.github.com/users/bhudiavick/received_events","type":"User","site_admin":false},"html_url":"https://github.com/bhudiavick/APIAutomation-repo2","description":"Automation using Rest Assured!","fork":false,"url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2","forks_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/forks","keys_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/keys{/key_id}","collaborators_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/teams","hooks_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/hooks","issue_events_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/issues/events{/number}","events_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/events","assignees_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/assignees{/user}","branches_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/branches{/branch}","tags_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/tags","blobs_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/git/refs{/sha}","trees_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/git/trees{/sha}","statuses_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/statuses/{sha}","languages_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/languages","stargazers_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/stargazers","contributors_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/contributors","subscribers_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/subscribers","subscription_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/subscription","commits_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/commits{/sha}","git_commits_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/git/commits{/sha}","comments_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/comments{/number}","issue_comment_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/issues/comments{/number}","contents_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/contents/{+path}","compare_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/compare/{base}...{head}","merges_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/merges","archive_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/downloads","issues_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/issues{/number}","pulls_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/pulls{/number}","milestones_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/milestones{/number}","notifications_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/labels{/name}","releases_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/releases{/id}","deployments_url":"https://api.github.com/repos/bhudiavick/APIAutomation-repo2/deployments","created_at":"2024-01-05T07:22:43Z","updated_at":"2024-01-05T07:22:43Z","pushed_at":"2024-01-05T07:22:43Z","git_url":"git://github.com/bhudiavick/APIAutomation-repo2.git","ssh_url":"git@github.com:bhudiavick/APIAutomation-repo2.git","clone_url":"https://github.com/bhudiavick/APIAutomation-repo2.git","svn_url":"https://github.com/bhudiavick/APIAutomation-repo2","homepage":null,"size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":0,"watchers":0,"default_branch":"main","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"squash_merge_commit_message":"COMMIT_MESSAGES","squash_merge_commit_title":"COMMIT_OR_PR_TITLE","merge_commit_message":"PR_TITLE","merge_commit_title":"MERGE_MESSAGE","network_count":0,"subscribers_count":0}
+2024-01-05 07:22:46,443 INFO  - Step 3 - Validating repository name
+2024-01-05 07:22:46,500 INFO  - Assertion for name done.
+2024-01-05 07:22:46,500 INFO  - Step 4 - Validating repository description
+2024-01-05 07:22:46,535 INFO  - Assertion for description done.
+2024-01-05 07:22:46,537 INFO  - Response status message is - HTTP/1.1 201 Created
+2024-01-05 07:22:46,538 INFO  - HTTP/1.1 201 Created
+2024-01-05 07:22:46,538 INFO  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:46,538 INFO  - XXXXXXXXXXXXXXXXXXXXXXX***********************************************XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:46,538 INFO  - XXXXXXXXXXXXXXXXXXXXXXX***********************************************XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:46,538 INFO  - X
+2024-01-05 07:22:46,538 INFO  - X
+2024-01-05 07:22:46,538 INFO  - X
+2024-01-05 07:22:46,538 INFO  - X
+2024-01-05 07:22:46,538 INFO  - X
+2024-01-05 07:22:46,545 INFO  - ****************************************************************************************
+2024-01-05 07:22:46,546 INFO  - ****************************************************************************************
+2024-01-05 07:22:46,546 INFO  - $$$$$$$$$$$$$$$$$$$$$            deleteRepo         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-05 07:22:46,546 INFO  - ****************************************************************************************
+2024-01-05 07:22:46,546 INFO  - ****************************************************************************************
+2024-01-05 07:22:46,546 INFO  - Step 1 - Generating deletion request url based on test case
+2024-01-05 07:22:46,546 INFO  - Deletion based on Payload: {
+	"name": "APIAutomation-repo2",
+	"description": "Automation using Rest Assured!"
+}
+2024-01-05 07:22:46,560 INFO  - Step 2 - Executing delete request
+2024-01-05 07:22:46,564 INFO  - Request URI is - https://api.github.com/repos/bhudiavick/APIAutomation-repo2
+2024-01-05 07:22:47,005 INFO  - Response status code is - 204
+2024-01-05 07:22:47,007 INFO  - Response status code is - 204
+2024-01-05 07:22:47,009 INFO  - Response status code is from common functions - 204
+2024-01-05 07:22:47,041 INFO  - Step 3 - Validate successful deletion of provided repo APIAutomation-repo2
+2024-01-05 07:22:47,044 INFO  - Response status code is - 204
+2024-01-05 07:22:47,049 INFO  - Response status message is - HTTP/1.1 204 No Content
+2024-01-05 07:22:47,049 INFO  - HTTP/1.1 204 No Content
+2024-01-05 07:22:47,050 INFO  - Assertion for Deletion status code done.
+2024-01-05 07:22:47,050 INFO  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:47,050 INFO  - XXXXXXXXXXXXXXXXXXXXXXX***********************************************XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:47,050 INFO  - XXXXXXXXXXXXXXXXXXXXXXX***********************************************XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:47,051 INFO  - X
+2024-01-05 07:22:47,051 INFO  - X
+2024-01-05 07:22:47,051 INFO  - X
+2024-01-05 07:22:47,051 INFO  - X
+2024-01-05 07:22:47,051 INFO  - X
+2024-01-05 07:22:47,063 INFO  - ****************************************************************************************
+2024-01-05 07:22:47,064 INFO  - ****************************************************************************************
+2024-01-05 07:22:47,064 INFO  - $$$$$$$$$$$$$$$$$$$$$            deleteRepoFromPOJO         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-05 07:22:47,064 INFO  - ****************************************************************************************
+2024-01-05 07:22:47,064 INFO  - ****************************************************************************************
+2024-01-05 07:22:47,065 INFO  - Step 1 - Generating deletion request url based on test case
+2024-01-05 07:22:47,067 INFO  - Deletion based on Payload: {
+  "name" : "APIAutomation-repo3",
+  "description" : "Automation using Rest Assured!"
+}
+2024-01-05 07:22:47,107 INFO  - Step 2 - Executing delete request
+2024-01-05 07:22:47,112 INFO  - Request URI is - https://api.github.com/repos/bhudiavick/APIAutomation-repo3
+2024-01-05 07:22:47,553 INFO  - Response status code is - 204
+2024-01-05 07:22:47,597 INFO  - Response status code is - 204
+2024-01-05 07:22:47,598 INFO  - Response status code is from common functions - 204
+2024-01-05 07:22:47,613 INFO  - Step 3 - Validate successful deletion of provided repo APIAutomation-repo3
+2024-01-05 07:22:47,615 INFO  - Response status code is - 204
+2024-01-05 07:22:47,618 INFO  - Response status message is - HTTP/1.1 204 No Content
+2024-01-05 07:22:47,619 INFO  - HTTP/1.1 204 No Content
+2024-01-05 07:22:47,619 INFO  - Assertion for Deletion status code done.
+2024-01-05 07:22:47,619 INFO  - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:47,619 INFO  - XXXXXXXXXXXXXXXXXXXXXXX***********************************************XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:47,619 INFO  - XXXXXXXXXXXXXXXXXXXXXXX***********************************************XXXXXXXXXXXXXXXXXXXXXX
+2024-01-05 07:22:47,619 INFO  - X
+2024-01-05 07:22:47,619 INFO  - X
+2024-01-05 07:22:47,619 INFO  - X
+2024-01-05 07:22:47,619 INFO  - X
+2024-01-05 07:22:47,619 INFO  - X

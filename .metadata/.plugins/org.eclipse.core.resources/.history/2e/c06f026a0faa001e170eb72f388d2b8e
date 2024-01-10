@@ -1,0 +1,38 @@
+package basic.testcase;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.restassured.response.Response;
+import pojoclasses.CreateRepoPOJO;
+import restapibase.BaseClass;
+import utility.Authn;
+import utility.createURL;
+import utility.payloadGenerator;
+
+public class createRepoTest {
+	Response response;
+	@Test
+	public void createRepositoryTestCase() throws IOException {
+		
+		String req_Payload = payloadGenerator.generateStringPayload("createRepo.json");
+		String bearer_token = Authn.getBearerToken();
+		
+		response = BaseClass.postRequest(endPoint, req_Payload, bearer_token);
+		String responseString = response.getBody().asPrettyString();
+		System.out.println("******* Response ********");
+		System.out.println(responseString);
+	}
+	
+	public void createRepoTestCaseUsingPojo() {
+		String endPoint = createURL.getBaseURI("/user/repos");
+		String bearer_token = Authn.getBearerToken();
+		pojoclasses.CreateRepoPOJO vick = new CreateRepoPOJO("APIAutomation-repo3", "Automation using Rest Assured!");
+		ObjectMapper objectMapper = new ObjectMapper();	
+		String request = objectMapper.writeValueAsString(objectMapper.)
+		
+	}
+}

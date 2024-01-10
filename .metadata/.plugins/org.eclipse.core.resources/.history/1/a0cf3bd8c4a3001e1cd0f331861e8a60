@@ -1,0 +1,29 @@
+package POJO;
+
+
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class DataSerializeAndDeserialize {
+	@Test
+	public void createDataFromPOJO() throws JsonProcessingException {
+		String employeeJSON = createEmployee("Vick", "Bhudia", "male",38,51000, true);
+		System.out.println(employeeJSON);
+		
+	}
+	
+	@Test
+	public void getPOJOFromObject() throws JsonProcessingException {
+		String employeeJSON = createEmployee("Reeva", "Bhudia", "female",8,0, false);
+		System.out.println(employeeJSON);
+	}
+	
+	public String createEmployee(String firstName, String lastName, String gender, int age, double salary, boolean married) throws JsonProcessingException {
+		SamplePOJO employeePojo = new SamplePOJO(firstName, lastName, gender,age,salary, married);
+		ObjectMapper objectMapper = new ObjectMapper();
+		return (objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(employeePojo));
+		
+	}
+}

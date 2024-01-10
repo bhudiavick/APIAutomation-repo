@@ -1,0 +1,65 @@
+package stepDefinitions;
+
+import static org.junit.Assert.assertEquals;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import resource.TestDataBuilder;
+import resource.commonUtils.utils;
+
+public class stepDefinitions extends utils {
+	TestDataBuilder testDataBuilder = new TestDataBuilder();
+	ObjectMapper objectMapper;
+	JsonPath jsonPath;
+	String payload;
+	Response response;
+
+	@Given("Create Repo Payload")
+	public void create_repo_payload() throws JsonProcessingException {
+		// Write code here that turns the phrase above into concrete actions
+
+		objectMapper = new ObjectMapper();
+		payload = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(testDataBuilder.createRepoPayload());
+
+	}
+
+	@When("User calls Create API {string} POST API Call")
+	public void user_calls_post_api_call(String resourcePath) {
+		// Write code here that turns the phrase above into concrete actions
+		response = postRequest(resourcePath, payload);
+
+	}
+	
+	@When("User calls Delete API {string}")
+	public void user_calls_delete_api(String resourcePath) {
+		response = deleteRequest(resourcePath, testDataBuilder.getRepoName());
+		
+	}
+
+	@Then("API Call is Successful with {int} status code")
+	public void api_call_is_successful_with_status_code(int status_code) {
+		// Write code here that turns the phrase above into concrete actions
+		assertEquals(status_code, response.getStatusCode());
+
+	}
+
+	@Then("Verify Repository {string} is {string}")
+	public void verify_created(String response_key, String repo_name) {
+		// Write code here that turns the phrase above into concrete actions
+		jsonPath = new JsonPath(response.getBody().asString());
+		String key_value = jsonPath.get(response_key);
+		assertEquals(repo_name, key_value);
+	}
+	
+
+
+
+}

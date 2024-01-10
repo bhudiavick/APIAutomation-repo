@@ -1,0 +1,65 @@
+package stepDefinitions;
+
+import static org.junit.Assert.*;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import PojoPayloads.CreateRepoPOJO;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class stepDefinitions {
+	CreateRepoPOJO req_payload;
+	ObjectMapper objectMapper;
+	RequestSpecification requestSpecification;
+	String bearer_token = "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";
+	Response response;
+	String baseURI = "https://api.github.com";
+	JsonPath jsonPath;
+	String payload;
+	
+	@Given("Create Repo Payload")
+	
+	
+	public void create_repo_payload() throws JsonProcessingException {
+	    // Write code here that turns the phrase above into concrete actions
+	    req_payload.setName("API-TEST-REPO");
+	    req_payload.setDescription("API rep created via BDD Test");
+	    objectMapper = new ObjectMapper();
+	    payload = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(req_payload);
+	      
+	}
+	@When("User calls {string} POST API Call and Supply {string}")
+	public void user_calls_post_api_call(String resourcePath, String payload) {
+	    // Write code here that turns the phrase above into concrete actions
+	    requestSpecification = RestAssured.given().body(payload);
+	    requestSpecification.contentType(ContentType.JSON);
+	    requestSpecification.header("Authorization","Bearer " + bearer_token);
+	    response = requestSpecification.post(baseURI + resourcePath);
+	    
+	}
+	@Then("API Call is Successful with {int} status code")
+	public void api_call_is_successful_with_status_code(int status_code) {
+	    // Write code here that turns the phrase above into concrete actions
+		assertEquals(status_code, response.getStatusCode());
+	   	
+	}
+	@Then("Verify created {string}")
+	public void verify_created(String response_key) {
+	    // Write code here that turns the phrase above into concrete actions
+		jsonPath = new JsonPath(response.getBody().asString());
+		String key_value =  jsonPath.get(response_key);
+	    assertEquals(req_payload.getName(),key_value);
+	}
+
+
+
+
+}

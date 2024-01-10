@@ -1,0 +1,38 @@
+package POJO;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class JSONArraySerialization {
+	
+	
+	
+	String completeJson;
+	ArrayList<SamplePOJO> allEmployeeSamplePOJOs = new ArrayList<SamplePOJO>();
+	@Test
+	public void createJSONArrayFromPOJO() throws JsonProcessingException {
+		
+		DataSerializeAndDeserialize dataSerializeAndDeserialize = new DataSerializeAndDeserialize();
+		addToArray(dataSerializeAndDeserialize.createEmployee("Vick", "Bhudia", "male", 38, 51000, true));
+		addToArray(dataSerializeAndDeserialize.createEmployee("Reeva", "Bhudia", "female", 8, 0, false));
+		addToArray(dataSerializeAndDeserialize.createEmployee("Leah", "Bhudia", "female", 5, 0, false));
+		
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+		completeJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(allEmployeeSamplePOJOs);
+		System.out.println(completeJson);
+		
+	}
+
+	public void addToArray(String data) throws JsonMappingException, JsonProcessingException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		allEmployeeSamplePOJOs.add(objectMapper.readValue(data, SamplePOJO.class));
+		
+	}
+}

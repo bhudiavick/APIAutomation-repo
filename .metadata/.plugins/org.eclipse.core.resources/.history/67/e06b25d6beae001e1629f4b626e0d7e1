@@ -1,0 +1,11 @@
+Feature: Validate Create Repository
+
+Scenario: Verify Create Repo API
+	Given Create Repo Payload
+	When User calls "CreateRepoAPI" POST API Call
+	Then API Call is Successful with 200 status code
+	And Verify created "RepoName"
+	
+	
+
+	

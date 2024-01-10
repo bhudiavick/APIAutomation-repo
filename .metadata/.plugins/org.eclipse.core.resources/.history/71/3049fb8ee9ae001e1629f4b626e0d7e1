@@ -1,0 +1,63 @@
+package stepDefinitions;
+
+import static org.junit.Assert.*;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import PojoPayloads.CreateRepoPOJO;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import resource.TestDataBuilder;
+
+public class stepDefinitions {
+	TestDataBuilder testDataBuilder = new TestDataBuilder();
+	ObjectMapper objectMapper;
+	RequestSpecification requestSpecification;
+	String bearer_token = "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";
+	Response response;
+	String baseURI = "https://api.github.com";
+	JsonPath jsonPath;
+	String payload;
+	
+	@Given("Create Repo Payload")	
+	public void create_repo_payload() throws JsonProcessingException {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	    objectMapper = new ObjectMapper();
+	    payload = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(testDataBuilder.createRepoPayload());
+	      
+	}
+	@When("User calls Create API {string} POST API Call")
+	public void user_calls_post_api_call(String resourcePath) {
+	    // Write code here that turns the phrase above into concrete actions
+	    requestSpecification = RestAssured.given().body(payload);
+	    requestSpecification.contentType(ContentType.JSON);
+	    requestSpecification.header("Authorization","Bearer " + bearer_token);
+	    response = requestSpecification.post(baseURI + resourcePath);
+	    
+	}
+	@Then("API Call is Successful with {int} status code")
+	public void api_call_is_successful_with_status_code(int status_code) {
+	    // Write code here that turns the phrase above into concrete actions
+		assertEquals(status_code, response.getStatusCode());
+	   	
+	}
+	@Then("Verify Repository {response_key} is {repo_name}")
+	public void verify_created(String response_key, String repo_name) {
+	    // Write code here that turns the phrase above into concrete actions
+		jsonPath = new JsonPath(response.getBody().asString());
+		String key_value =  jsonPath.get(response_key);
+	    assertEquals(repo_name,key_value);
+	}
+
+
+
+
+}

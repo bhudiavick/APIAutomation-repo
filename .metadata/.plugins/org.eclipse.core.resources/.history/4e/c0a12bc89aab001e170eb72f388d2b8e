@@ -1,0 +1,107 @@
+package basic.testcase;
+
+import java.io.IOException;
+
+import org.apache.log4j.PropertyConfigurator;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.restassured.response.Response;
+import pojoclasses.CreateRepoPOJO;
+import restapibase.BaseClass;
+import utility.Authn;
+import utility.CommonUtilFunctions;
+import utility.RestFWLogger;
+import utility.createURL;
+import utility.payloadGenerator;
+
+public class createRepoTest {
+	Response response;
+	String endPoint = createURL.getBaseURI("/user/repos");
+	String bearer_token = Authn.getBearerToken();
+	ObjectMapper objectMapper;
+	@Test
+	public void createRepositoryTestCase() throws IOException {
+		RestFWLogger.initLogger();
+		RestFWLogger.startTestCase("createRepositoryTestCase");
+		
+		RestFWLogger.info("Step 1 - Generating payload String");
+		String req_Payload = payloadGenerator.generateStringPayload("createRepo.json");
+		
+		RestFWLogger.info("Step 2 - Executing Create Repo call");
+		response = BaseClass.postRequest(endPoint, req_Payload, bearer_token);		
+		String responseString = response.getBody().asString();
+
+		RestFWLogger.info("Step 3 - Validating repository name");
+		Assert.assertEquals(getKeyValue(responseString, "name"),getKeyValue(req_Payload, "name"));
+		RestFWLogger.info("Assertion for name done.");
+		
+
+		RestFWLogger.info("Step 4 - Validating repository description");
+		Assert.assertEquals(getKeyValue(responseString, "description"),getKeyValue(req_Payload, "description"));
+		RestFWLogger.info("Assertion for description done.");
+		
+		RestFWLogger.endTestCase();
+	}
+	@Test
+	public void createRepoTestCaseUsingPojo() throws JsonProcessingException {
+		RestFWLogger.initLogger();
+		PropertyConfigurator.configure("log4j.properties");
+		RestFWLogger.startTestCase("createRepoTestCaseUsingPojo");
+		RestFWLogger.info("Starting creation of repo...");
+		RestFWLogger.info("Endpoint: " + endPoint);
+		pojoclasses.CreateRepoPOJO vick = new CreateRepoPOJO("APIAutomation-repo3", "Automation using Rest Assured!");
+		objectMapper = new ObjectMapper();
+		String req_Payload = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(vick);
+		RestFWLogger.info("Payload: " + req_Payload);
+		response = BaseClass.postRequest(endPoint, req_Payload, bearer_token);
+		String responseString = response.getBody().asString();
+		RestFWLogger.info("Response payload: " + responseString);
+		Assert.assertEquals(getKeyValue(responseString, "name"),vick.getName());
+		RestFWLogger.info("Assertion for name done.");
+		RestFWLogger.info("Request value: " + vick.getName());
+		RestFWLogger.info("Response value: " + getKeyValue(responseString, "name"));
+		Assert.assertEquals(getKeyValue(responseString, "description"),vick.getDescription());
+		RestFWLogger.info("Assertion for description done.");
+		RestFWLogger.info("Request value: " + vick.getDescription());
+		RestFWLogger.info("Response value: " + getKeyValue(responseString, "description"));
+		RestFWLogger.endTestCase();
+	}
+	
+	public String getKeyValue(String payload,String key) {
+		return CommonUtilFunctions.getResponseKeyValue(payload,key);
+	}
+	@Test
+	public void deleteRepo() throws IOException {
+		RestFWLogger.initLogger();
+		PropertyConfigurator.configure("log4j.properties");
+		RestFWLogger.startTestCase("deleteRepo");
+		RestFWLogger.info("Starting DELETE of repo...");
+		String req_Payload = payloadGenerator.generateStringPayload("createRepo.json");
+		RestFWLogger.info("Payload: " + req_Payload);
+		String deleteEndpoint = createURL.getBaseURI("/repos/bhudiavick/" + getKeyValue(req_Payload, "name"));
+		RestFWLogger.info(deleteEndpoint);
+		response = BaseClass.deleteRequest(deleteEndpoint, bearer_token);
+		RestFWLogger.info(String.valueOf(response.getStatusCode()));
+		RestFWLogger.endTestCase();
+	}
+	
+	@Test
+	public void deleteRepoFromPOJO() throws IOException {
+		RestFWLogger.initLogger();
+		PropertyConfigurator.configure("log4j.properties");
+		RestFWLogger.startTestCase("deleteRepoFromPOJO");
+		RestFWLogger.info("Starting DELETE of repo...");
+		pojoclasses.CreateRepoPOJO vick = new CreateRepoPOJO("APIAutomation-repo3", "Automation using Rest Assured!");
+		String req_Payload = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(vick);
+		RestFWLogger.info("Payload: " + req_Payload);
+		String deleteEndpoint = createURL.getBaseURI("/repos/bhudiavick/" + getKeyValue(req_Payload, "name"));
+		RestFWLogger.info(deleteEndpoint);
+		response = BaseClass.deleteRequest(deleteEndpoint, bearer_token);
+		RestFWLogger.info(String.valueOf(response.getStatusCode()));
+		RestFWLogger.endTestCase();
+	}
+}
