@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cucumber.Options.TestRunner" time="8.066" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cucumber.Options.TestRunner" time="4.493" tests="6" errors="0" skipped="0" failures="6">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_211\jre\bin"/>
@@ -28,7 +28,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="C:/ProgramData/chocolatey/lib/maven/apache-maven-3.9.6/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\vick\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\vick\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\SourceGear\Common\DiffMerge;C:\Program Files\dotnet;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\ProgramData\chocolatey\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.6\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Users\vick\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\vick\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\vick\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\SourceGear\Common\DiffMerge;C:\Program Files\dotnet;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\ProgramData\chocolatey\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.6\bin;C:\Users\vick\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
     <property name="maven.conf" value="C:/ProgramData/chocolatey/lib/maven/apache-maven-3.9.6/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_211\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -64,10 +64,91 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="Verify Create Repo API #1" classname="Validate Create Repository" time="3.443"/>
-  <testcase name="Verify Create Repo API #2" classname="Validate Create Repository" time="1.178"/>
-  <testcase name="Verify Create Repo API #3" classname="Validate Create Repository" time="1.1"/>
-  <testcase name="Verify Delete Repo API #1" classname="Validate Create Repository" time="0.626"/>
-  <testcase name="Verify Delete Repo API #2" classname="Validate Create Repository" time="0.542"/>
-  <testcase name="Verify Delete Repo API #3" classname="Validate Create Repository" time="0.585"/>
+  <testcase name="Verify Create Repo API #1" classname="Validate Create Repository" time="2.269">
+    <failure message="expected:&lt;201&gt; but was:&lt;401&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<201> but was:<401>
+]]></failure>
+    <system-out><![CDATA[2024-01-14 06:55:07,017 INFO  - ****************************************************************************************
+2024-01-14 06:55:07,018 INFO  - ****************************************************************************************
+2024-01-14 06:55:07,018 INFO  - $$$$$$$$$$$$$$$$$$$$$            Verify Create Repo API         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-14 06:55:07,018 INFO  - ****************************************************************************************
+2024-01-14 06:55:07,018 INFO  - ****************************************************************************************
+2024-01-14 06:55:07,249 INFO  - BaseURI is - https://api.github.com/user/repos
+2024-01-14 06:55:07,249 INFO  - Payload to be sent is {
+  "name" : "repo1",
+  "description" : "DDT repo1"
+}
+2024-01-14 06:55:09,178 INFO  - Response of request is {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest"}
+2024-01-14 06:55:09,178 INFO  - Post status code is 401
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Create Repo API #2" classname="Validate Create Repository" time="0.32">
+    <failure message="expected:&lt;201&gt; but was:&lt;401&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<201> but was:<401>
+]]></failure>
+    <system-out><![CDATA[2024-01-14 06:55:09,192 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,193 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,193 INFO  - $$$$$$$$$$$$$$$$$$$$$            Verify Create Repo API         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-14 06:55:09,193 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,193 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,194 INFO  - BaseURI is - https://api.github.com/user/repos
+2024-01-14 06:55:09,194 INFO  - Payload to be sent is {
+  "name" : "repo2",
+  "description" : "DDT repo2"
+}
+2024-01-14 06:55:09,504 INFO  - Response of request is {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest"}
+2024-01-14 06:55:09,504 INFO  - Post status code is 401
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Create Repo API #3" classname="Validate Create Repository" time="0.338">
+    <failure message="expected:&lt;201&gt; but was:&lt;401&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<201> but was:<401>
+]]></failure>
+    <system-out><![CDATA[2024-01-14 06:55:09,521 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,521 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,522 INFO  - $$$$$$$$$$$$$$$$$$$$$            Verify Create Repo API         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-14 06:55:09,522 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,522 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,523 INFO  - BaseURI is - https://api.github.com/user/repos
+2024-01-14 06:55:09,524 INFO  - Payload to be sent is {
+  "name" : "repo3",
+  "description" : "DDT repo3"
+}
+2024-01-14 06:55:09,842 INFO  - Response of request is {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest"}
+2024-01-14 06:55:09,843 INFO  - Post status code is 401
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Delete Repo API #1" classname="Validate Create Repository" time="0.339">
+    <failure message="expected:&lt;204&gt; but was:&lt;401&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<204> but was:<401>
+]]></failure>
+    <system-out><![CDATA[2024-01-14 06:55:09,856 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,856 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,856 INFO  - $$$$$$$$$$$$$$$$$$$$$            Verify Delete Repo API         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-14 06:55:09,856 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,857 INFO  - ****************************************************************************************
+2024-01-14 06:55:09,858 INFO  - Delete URI is - https://api.github.com/repos/bhudiavick/repo1
+2024-01-14 06:55:10,184 INFO  - Delete status code is 401
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Delete Repo API #2" classname="Validate Create Repository" time="0.317">
+    <failure message="expected:&lt;204&gt; but was:&lt;401&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<204> but was:<401>
+]]></failure>
+    <system-out><![CDATA[2024-01-14 06:55:10,189 INFO  - ****************************************************************************************
+2024-01-14 06:55:10,189 INFO  - ****************************************************************************************
+2024-01-14 06:55:10,189 INFO  - $$$$$$$$$$$$$$$$$$$$$            Verify Delete Repo API         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-14 06:55:10,189 INFO  - ****************************************************************************************
+2024-01-14 06:55:10,189 INFO  - ****************************************************************************************
+2024-01-14 06:55:10,189 INFO  - Delete URI is - https://api.github.com/repos/bhudiavick/repo2
+2024-01-14 06:55:10,499 INFO  - Delete status code is 401
+]]></system-out>
+  </testcase>
+  <testcase name="Verify Delete Repo API #3" classname="Validate Create Repository" time="0.346">
+    <failure message="expected:&lt;204&gt; but was:&lt;401&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<204> but was:<401>
+]]></failure>
+    <system-out><![CDATA[2024-01-14 06:55:10,513 INFO  - ****************************************************************************************
+2024-01-14 06:55:10,513 INFO  - ****************************************************************************************
+2024-01-14 06:55:10,513 INFO  - $$$$$$$$$$$$$$$$$$$$$            Verify Delete Repo API         $$$$$$$$$$$$$$$$$$$$$$$$$
+2024-01-14 06:55:10,513 INFO  - ****************************************************************************************
+2024-01-14 06:55:10,513 INFO  - ****************************************************************************************
+2024-01-14 06:55:10,515 INFO  - Delete URI is - https://api.github.com/repos/bhudiavick/repo3
+2024-01-14 06:55:10,845 INFO  - Delete status code is 401
+]]></system-out>
+  </testcase>
 </testsuite>

@@ -1,4 +1,22 @@
 -------------------------------------------------------------------------------
 Test set: cucumber.Options.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.066 sec - in cucumber.Options.TestRunner
+Tests run: 6, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 4.493 sec <<< FAILURE! - in cucumber.Options.TestRunner
+Verify Create Repo API #1(Validate Create Repository)  Time elapsed: 2.269 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<201> but was:<401>
+
+Verify Create Repo API #2(Validate Create Repository)  Time elapsed: 0.32 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<201> but was:<401>
+
+Verify Create Repo API #3(Validate Create Repository)  Time elapsed: 0.338 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<201> but was:<401>
+
+Verify Delete Repo API #1(Validate Create Repository)  Time elapsed: 0.339 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<401>
+
+Verify Delete Repo API #2(Validate Create Repository)  Time elapsed: 0.317 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<401>
+
+Verify Delete Repo API #3(Validate Create Repository)  Time elapsed: 0.346 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<401>
+
